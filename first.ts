@@ -1,1 +1,0 @@
-//this is the typescript file first.ts
