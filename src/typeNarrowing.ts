@@ -22,7 +22,18 @@ class glassChai{
         return `Serving chai in glass`
     }
 }
- function serveChai(chai : kulhadChai | glassChai){
- if(chai )
+type ChaiOrder = {
+    type : string,
+    sugar : number
+}
+ function isChaiOrder(obj : any ) : obj is ChaiOrder{
+
+    return (
+        typeof obj === "object" &&
+        "type" in obj &&
+        typeof obj.type === "string" &&
+        "sugar" in obj &&
+        typeof obj.sugar === "number" 
+    )
+
  }
- 
