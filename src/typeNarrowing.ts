@@ -37,3 +37,13 @@ type ChaiOrder = {
     )
 
  }
+ function processChaiOrder(order : ChaiOrder | kulhadChai | glassChai){
+    if(isChaiOrder(order)){
+        console.log(`Processing chai order: Type - ${order.type}, Sugar - ${order.sugar} tsp`);
+    } else if(order instanceof kulhadChai){
+        console.log(order.Serve());
+    } else if(order instanceof glassChai){
+        console.log(order.serve());
+    } else {
+        console.log("Unknown order type");
+    }
