@@ -46,4 +46,16 @@ type ChaiOrder = {
         console.log(order.serve());
     } else {
         console.log("Unknown order type");
+    }}
+    function assertIsChaiOrder(obj: any): asserts obj is ChaiOrder {
+        if (
+            typeof obj !== "object" ||
+            obj === null ||
+            !("type" in obj) ||
+            typeof obj.type !== "string" ||
+            !("sugar" in obj) ||
+            typeof obj.sugar !== "number"
+        ) {
+            throw new Error("Object is not a valid ChaiOrder");
+        }
     }
