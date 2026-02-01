@@ -59,3 +59,14 @@ type ChaiOrder = {
             throw new Error("Object is not a valid ChaiOrder");
         }
     }
+    function handleChaiOrder(order: any) {
+        assertIsChaiOrder(order);
+        console.log(`Handling chai order: Type - ${order.type}, Sugar - ${order.sugar} tsp`);
+    }
+
+// Example usages
+processChaiOrder({ type: "Masala", sugar: 2 });
+processChaiOrder(new kulhadChai());
+processChaiOrder(new glassChai());
+
+handleChaiOrder({ type: "Ginger", sugar: 1 });
