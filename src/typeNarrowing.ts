@@ -70,4 +70,12 @@ processChaiOrder(new kulhadChai());
 processChaiOrder(new glassChai());
 
 handleChaiOrder({ type: "Ginger", sugar: 1 });
-function order(chai )
+function order(chai ) {
+    if(chai instanceof kulhadChai){
+        console.log(chai.Serve());
+    } else if(chai instanceof glassChai){
+        console.log(chai.serve());
+    } else {
+        console.log("Unknown chai type");
+    }
+}
