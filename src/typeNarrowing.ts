@@ -105,3 +105,13 @@ function orderChaiWithTypeGuard(chai : kulhadChai | glassChai){
             console.log("Unknown chai type");
         }
     }
+
+    function orderChaiWithTypeGuard(chai : kulhadChai | glassChai){
+        if(chai instanceof kulhadChai){
+            console.log(chai.Serve());
+        } else if(chai instanceof glassChai){
+            console.log(chai.serve());
+        } else {
+            console.log("Unknown chai type");
+        }
+    }   
